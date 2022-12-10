@@ -16,7 +16,6 @@ def det_destination(doc):
 
 def guess_destination(doc):
     for token in doc:
-        # print(token.text, token.ent_type)
         if token.ent_type != 0 and token.ent_type_ == 'GPE':
             return token.text
     return 'Failed to determine'
