@@ -34,6 +34,22 @@ for sent in doc.sents:
     tpl = (sent.text, {'entities': entities})
     train_exams.append(tpl)
 print(train_exams)
+'''
+Output:
+[
+    (
+        'Could you send a taxi to Solnce?', {'entities': [(25, 31, 'GPE')]}
+    ), 
+    (
+        'I need to get to Google.', 
+        {'entities': [(17, 23, 'ORG')]}
+    ), 
+    (
+        'Could you send a taxi an hour later?', 
+        {'entities': [(22, 24, 'TIME'), (25, 29, 'TIME'), (30, 35, 'TIME')]}
+    )
+]
+'''
 
 
 other_pipes = [pipe for pipe in nlp.pipe_names if pipe != 'ner']
